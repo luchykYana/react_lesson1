@@ -1,0 +1,17 @@
+.user{
+    border: 5px solid silver;
+    margin: 50px;
+    padding: 20px;
+    width: 600px;
+}
+.posts{
+    border: 5px solid steelblue;
+    padding: 10px;
+    margin: 5px;
+}
+
+.post{
+    border: 5px solid cornflowerblue;
+    padding: 10px;
+    margin: 10px;
+}

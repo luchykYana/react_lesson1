@@ -1,0 +1,11 @@
+.comments{
+    border: 3px solid red;
+    padding: 5px;
+    margin: 5px;
+    font-size: 10px;
+}
+.comment{
+    border: 3px solid orange;
+    padding: 5px;
+    margin: 5px;
+}

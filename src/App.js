@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+// отримати всіх юзерів з https://jsonplaceholder.typicode.com/ вивести на сторінку
+//     До кожного юзера отримати пости та вивести в межах User компоненти
+// До кожного поста отримати комментарі, та вивести в межах Post компоненти
 
-function App() {
+import './App.css';
+import Users from "./components/users/Users";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Users/>
+
     </div>
   );
 }
-
-export default App;
