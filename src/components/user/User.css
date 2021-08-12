@@ -1,0 +1,11 @@
+.user{
+    border: 5px solid silver;
+    margin: 20px auto;
+    padding: 20px;
+    width: 600px;
+    font-size: 20px;
+}
+
+ul{
+    list-style: none;
+}

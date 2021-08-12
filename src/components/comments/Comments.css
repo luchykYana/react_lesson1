@@ -1,0 +1,5 @@
+.comments{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 10px;
+}
