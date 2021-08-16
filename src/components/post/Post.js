@@ -1,17 +1,22 @@
 import "./Post.css";
 
-export default function Post({post: {userId, id, title, body}, getCommentsOfPost}) {
+export default function Post({post: {userId, id, title, body}, getMorePost, clearPostsOfUser}) {
 
-    const onClickGetCommentsOfPost = () => {
-        getCommentsOfPost(id);
+    const onClickMorePost = () => {
+        getMorePost(body, id);
     }
 
+    const onClickClearPostsOfUser = () => {
+        clearPostsOfUser();
+    }
 
     return (
         <div className={'post'}>
             <h2>{userId}.{id} {title}</h2>
-            <p>{body}</p>
-            <button onClick={onClickGetCommentsOfPost}>COMMENTS</button>
+            <div className="btns">
+                <button className={'btnBody'} onClick={onClickMorePost}>MORE</button>
+                <button className={'btnBody'} onClick={onClickClearPostsOfUser}>CLEAR</button>
+            </div>
         </div>
     );
 }

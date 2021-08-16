@@ -8,41 +8,75 @@
 
 import "./Posts.css";
 import {useEffect, useState} from "react";
-import {getCommentsOfPost, getPosts} from "../../services/posts.service";
+import {getComments, getCommentsOfPost, getPosts} from "../../services/posts.service";
 import Post from "../post/Post";
 import Comment from "../comment/Comment";
 
 export default function Posts() {
 
     let [posts, setPosts] = useState([]);
-    let [commentsOfPost, setCommentsOfPost] = useState(null);
+    let [postInfo, setPostInfo] = useState(null);
+    let [comments, setComments] = useState([]);
+    let [commentsOfPost, setCommentsOfPost] = useState([]);
+    let [postId, setPostId] = useState(0);
 
     useEffect(() => {
         getPosts().then(value => setPosts([...value]));
     })
 
-    const getCommentsOfPostFunc = (id) => {
-        getCommentsOfPost(id).then(value => setCommentsOfPost([...value]));
+    useEffect(() => {
+        getComments().then(value => setComments([...value]));
+    })
+    const getMorePost = (Info, id) => {
+        setCommentsOfPost(null);
+        setPostInfo(Info);
+        setPostId(id);
+    }
+
+    const clearPostsOfUser = () => {
+        setPostInfo(null);
+        setCommentsOfPost(null);
+
+    }
+
+    const getCommentsOfPostFunc = () => {
+         getCommentsOfPost(postId).then(value => setCommentsOfPost([...value]));
     }
 
     return (
-        <div className={'posts'}>
-            {
-                posts.map(post => <Post
-                    key={post.id}
-                    post={post}
-                    getCommentsOfPost={getCommentsOfPostFunc}
-                />)
-            }
-
-            {commentsOfPost && <div className={'commentsOfUser'}>
+        <div>
+        <div className={'all'}>
+            <div className={'posts'}>
                 {
-                    commentsOfPost.map(comment => <Comment
-                        key={comment.id}
-                        comment={comment}/>)
+                    posts.map(post => <Post
+                        key={post.id}
+                        post={post}
+                        getMorePost={getMorePost}
+                        clearPostsOfUser={clearPostsOfUser}
+                    />)
                 }
             </div>
-            }
+
+            <div>
+                {
+                postInfo && <div className={'body'}>
+                    <p>POST INFO: {postInfo}</p>
+                    <button className={'btnComments'} onClick={getCommentsOfPostFunc}>COMMENTS OF POST</button>
+                    {
+                        commentsOfPost && <div>{
+                            commentsOfPost.map(comment => <Comment key={comment.id} comment={comment}/>)
+                        }</div>
+                    }
+                </div>
+                }
+            </div>
+
+        </div>
+            <div>
+                {
+                    comments.map(comment => <Comment key={comment.id} comment={comment}/>)
+                }
+            </div>
         </div>
     );
 }

@@ -1,5 +1,18 @@
-.posts{
+.all{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+}
+
+.body{
+    width: 680px;
+    padding: 1px;
+    margin: 20px;
+    font-size: 18px;
+}
+
+.btnComments{
+    width: 200px;
+    height: 40px;
+    background-color: firebrick;
+    color: white;
+    border-radius: 10px;
 }
