@@ -14,14 +14,27 @@ export default function Users() {
     let [users, setUsers] = useState([]);
     let [postsOfUser, setPostsOfUser] = useState(null);
 
-
     useEffect(() => {
         getUsers().then(value => setUsers([...value]));
     }, [])
 
+    // let postsStyle = {
+    //     width: "50%",
+    //     fontSize: "9px",
+    //     border: "5px solid dodgerblue",
+    //     marginTop: "50px",
+    //     marginRight: "10px",
+    //     marginBottom: "50px",
+    //     marginLeft: "5px",
+    //     padding: "20px",
+    //     height: "625px",
+    // }
 
     const getPostsOfUserFunc = (id) => {
         getPostsOfUser(id).then(value => setPostsOfUser([...value]));
+
+        // let temp = id*625 + "px";
+        // Object.assign(postsStyle.marginTop, temp);
     }
 
     const clearPostsOfUser = () => {
@@ -42,7 +55,7 @@ export default function Users() {
                 }
             </div>
             {
-                postsOfUser && <div className={'Posts'}>
+                postsOfUser && <div /*style={postsStyle}*/ className={'postsStyle'}>
                     {postsOfUser.map(post => <Post key={post.id} post={post}/>)}
                 </div>
             }
