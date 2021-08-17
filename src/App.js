@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+// IP с дома 195.72.146.25
+// IP в офисе 192.168.1.253
+//
+// есть API для вывода и добавления машин:
+//
+//     модель выглядит так
+// {
+//     "id": 40,
+//     "model": "seat",
+//     "price": 2300,
+//     "year": 2018
+// }
+//
+//
+// GET  http://<IP>/api/v1/cars получить массив всех машин
+//
+//     создать форму для добавления машинки
+//
+// POST http://<IP>/api/v1/cars записать новую машину в базу данных (обратите внимание что метод post,
+// а не get нужно будет указывать в httpClient)
+//
+//     Валидация:
+//         model максимальная длина 20 символов
+// price минимум 0
+// year мин 1990 мах 2021
+//
+// у вас должна быть форма для добавления машинки, и под ней должен быть адекватный вывод всех машин
+
 import './App.css';
+import Form from "./components/form/Form";
+import Cars from "./components/cars/Cars";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <div>
+            <Form/>
+            <Cars/>
+        </div>
+    );
 }
-
-export default App;
