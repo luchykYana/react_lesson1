@@ -1,0 +1,29 @@
+.car{
+    width: 200px;
+    border: 3px solid dodgerblue;
+    margin: 10px;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.infoCar{
+    height: 150px;
+}
+
+.btnsCar{
+    display: flex;
+    grid-column-gap: 20px;
+}
+
+.btnsCar > button{
+    width: 100px;
+    background: dodgerblue;
+    color: white;
+    transition: 500ms color, 500ms background-color;
+    cursor: pointer;
+}
+
+.btnsCar > button:hover{
+    background: white;
+    color: dodgerblue;
+}

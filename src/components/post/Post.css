@@ -1,0 +1,11 @@
+.post{
+    width: 200px;
+    border: 5px solid dodgerblue;
+    margin: 16px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.post > h2 {
+    font-size: 16px;
+}

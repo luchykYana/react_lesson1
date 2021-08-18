@@ -1,0 +1,13 @@
+.user-select{
+    width: 300px;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 30px;
+    margin: 30px 100px;
+    box-shadow: 10px 5px 5px rgba(30, 144, 255, 0.5);
+}
+
+.user-select > option{
+    background-color: white;
+    color: dodgerblue;
+}
