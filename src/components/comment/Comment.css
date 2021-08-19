@@ -1,0 +1,11 @@
+.comment{
+    width: 190px;
+    border: 5px solid dodgerblue;
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    font-size: 10px;
+}
+
+.comment > p{
+    font-size: 14px;
+}
