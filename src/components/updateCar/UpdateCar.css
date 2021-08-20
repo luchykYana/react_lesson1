@@ -1,0 +1,63 @@
+.form{
+    width: 90%;
+    margin: 30px 50px;
+    padding: 20px;
+    border: 3px solid dodgerblue;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+}
+
+.form > div{
+    display: flex;
+    grid-column-gap: 10px;
+    align-items: center;
+}
+
+.form > div > h4{
+    margin: 0;
+    padding: 0;
+}
+
+.form > div > input{
+    border: 2px solid dodgerblue;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+
+.btnUpdateCar{
+    margin: 10px;
+    width: 170px;
+    height: 30px;
+    background: dodgerblue;
+    color: white;
+    transition: 500ms color, 500ms background;
+    cursor: pointer;
+}
+
+.btnUpdateCar:hover{
+    background: white;
+    color: dodgerblue;
+}
+
+.car-select{
+    width: 300px;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 30px;
+    margin: 30px 50px;
+    box-shadow: 10px 5px 5px rgba(30, 144, 255, 0.5);
+}
+
+.car-select > option{
+    background-color: white;
+    color: dodgerblue;
+}
+
+.message{
+    margin: 20px 50px;
+    color: lightseagreen;
+    font-size: 30px;
+    text-align: center;
+}

@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+// IP с дома 195.72.146.25
+// IP в офисе 192.168.1.253
+//
+//
+// Є наступні лінки, та дії закріплені за ними
+// /cars - отримати всі автівки та вивести їх
+// /create-car - сторінка з формою створення нового авто
+// Додатково
+// /update-car - сторінка з двома формами - 1 форма з select, в якій  можна обрати яку автівку редагувати. Після вибору
+// поточні данні про авто з'являються на другій формі, пілся редагування яких і відправки автівка оновлюється на сервері.
+
+
 import './App.css';
+import Links from "./components/links/Links";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <div>
+            <Links/>
+        </div>
+    );
 }
-
-export default App;
