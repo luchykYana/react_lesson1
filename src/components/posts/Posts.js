@@ -5,6 +5,7 @@ import {
     Route,
 } from "react-router-dom";
 import PostDetails from "../postDetails/PostDetails";
+import "./Posts.css";
 
 export default function Posts({match: {url}}) {
 
@@ -15,10 +16,13 @@ export default function Posts({match: {url}}) {
     })
 
     return (
-        <div>
-            {posts.map(post => <Post key={post.id} post={post}/>)}
-
-            <Route path={`${url}/:id`} render={(props) => <PostDetails {...props}/>}/>
+        <div className={'posts'}>
+            <div className={'posts-info'}>
+                {posts.map(post => <Post key={post.id} post={post}/>)}
+            </div>
+            <div>
+                <Route path={`${url}/:id`} render={(props) => <PostDetails {...props}/>}/>
+            </div>
         </div>
     );
 }

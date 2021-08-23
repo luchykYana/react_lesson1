@@ -1,10 +1,20 @@
 .user-details{
+    width: 450px;
     border: 3px solid dodgerblue;
     margin: 0 50px;
     padding: 10px 20px;
+    font-size: 14px;
+}
 
+.user-details h2, h3{
+    margin: 0;
+    padding: 0;
 }
 
 ul{
     list-style: none;
+}
+
+.blue{
+    color: dodgerblue;
 }
