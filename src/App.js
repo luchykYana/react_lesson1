@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+// є об'єкт, значення якого 0
+// Стоврити 2 кнопки.
+//     Перша збільшує   значення на 10
+// Друга зменшує на 2.
+//
+// Зміну стану та виведення реалізувати через redcer
+
 import './App.css';
+import {useReducer} from "react";
+import reducer from "./reducers/reducer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+
+    let [state, dispatch] = useReducer(reducer, 0);
+
+    return (
+        <div>
+            <h1>{state}</h1>
+            <button onClick = {() => dispatch('+')}>increment</button>+10
+            <br/>
+            <button onClick ={() => dispatch('-')}>decrement</button>-2
+
+        </div>
+    );
 }
-
-export default App;
