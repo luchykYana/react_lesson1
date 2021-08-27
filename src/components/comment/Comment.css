@@ -1,0 +1,10 @@
+.comment{
+    width: 220px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 5px solid dodgerblue;
+    font-size: 14px;
+}
+.comment>h3{
+    font-size: 13px;
+}

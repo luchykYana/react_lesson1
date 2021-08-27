@@ -1,0 +1,10 @@
+.user{
+    width: 600px;
+    padding: 10px 20px;
+    margin: 20px;
+    border: 5px solid dodgerblue;
+}
+
+ul{
+    list-style: none;
+}
