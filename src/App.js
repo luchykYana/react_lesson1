@@ -15,7 +15,8 @@ import reducer from "./reducers/reducer";
 
 export default function App() {
 
-    let [{users, posts, comments}, dispatch] = useReducer(reducer, {users: [], posts: [], comments: []});
+    const initialState = {users: [], posts: [], comments: []};
+    let [{users, posts, comments}, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() => {
         async function fetchData() {
