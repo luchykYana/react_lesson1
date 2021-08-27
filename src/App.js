@@ -18,21 +18,16 @@ export default function App() {
     let [{users, posts, comments}, dispatch] = useReducer(reducer, {users: [], posts: [], comments: []});
 
     useEffect(() => {
-        async function fetchUsers() {
+        async function fetchData() {
             let users = await getUsers();
-            dispatch({type: 'GET_USERS', payload: users})
-        }
-        async function fetchPosts() {
             let posts = await getPosts();
-            dispatch({type: 'GET_POSTS', payload: posts})
-        }
-        async function fetchComments() {
             let comments = await getComments();
+            dispatch({type: 'GET_USERS', payload: users});
+            dispatch({type: 'GET_POSTS', payload: posts});
             dispatch({type: 'GET_COMMENTS', payload: comments});
         }
-        fetchUsers();
-        fetchPosts();
-        fetchComments();
+
+        fetchData();
 
     }, [])
 
