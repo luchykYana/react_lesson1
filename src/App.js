@@ -1,3 +1,9 @@
+// На практичне завдання
+// Створити todo використовуючи Redux. Має бути контрольована форма з полями: title, description(по бажанню також можете зробити через Redux). Що має робити наша todo?
+// 1. Додавати саме todo
+// 2. Видаляти todo
+// 3. Редагувати todo
+
 import './App.css';
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
@@ -19,6 +25,17 @@ export default function App() {
         dispatch({type: 'TODO', payload: infoFromForm});
     };
 
+    let onClickDelete = (titleValue, descriptionValue) => {
+        dispatch({type: "DELETE", payload: {title: titleValue, description: descriptionValue}});
+    };
+
+    let onClickEdit = (titleValue, descriptionValue) => {
+        setInfoFromForm({...infoFromForm, title: titleValue, description: descriptionValue});
+    }
+
+    let onClickEditMain = () => {
+        dispatch({type: 'EDIT', payload: infoFromForm});
+    };
     return (
         <div>
             <form onSubmit={onSubmitForm} className={'form'}>
@@ -27,7 +44,9 @@ export default function App() {
                 <button disabled={!infoFromForm.title || !infoFromForm.description}>add</button>
             </form>
 
-            <Items value={state}/>
+            <button onClick={onClickEditMain}>Edit</button>
+
+            <Items value={state} onClickDelete={onClickDelete} onClickEdit={onClickEdit}/>
 
         </div>
     );
