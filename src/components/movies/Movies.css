@@ -1,0 +1,9 @@
+.films{
+    margin: 0 100px;
+    padding: 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 5px solid #1A1A1D;
+    background-color:#1A1A1D;
+}

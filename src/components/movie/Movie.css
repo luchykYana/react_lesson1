@@ -1,0 +1,13 @@
+.film{
+    width: 300px;
+    color: white;
+    font-size: 18px;
+    margin: 20px 5px;
+}
+.img{
+    width: 300px;
+    height: 450px;
+}
+.title{
+    padding: 2px 10px;
+}
