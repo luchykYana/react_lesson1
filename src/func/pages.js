@@ -1,3 +1,4 @@
+
 export function createPages(pages, currentPage) {
     const pagesCount = 500;
     if(pagesCount > 10) {

@@ -5,6 +5,10 @@
     height: auto;
 }
 
+.first{
+    background-color: #C3073F;
+}
+
 header{
     background-color: #1A1A1D;
     height: 200px;

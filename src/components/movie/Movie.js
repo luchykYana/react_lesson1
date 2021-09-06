@@ -1,28 +1,33 @@
 import './Movie.css';
 import {
     BrowserRouter as Router,
-    Route,
     Link,
 } from "react-router-dom";
-import MovieDetails from "../movie_details/MovieDetails";
+import {useHistory} from "react-router";
+
 
 export default function Movie({movie}) {
 
     let url = 'https://image.tmdb.org/t/p/w300' + movie.poster_path;
+    let history = useHistory();
+    const navigator = () => {
+        history.push(
+            '/movie-details', movie
+        );
+    };
 
     return (
         <Router>
             <div className={'film'}>
-                <Link to={'/movie-details'}>
-                    <div className={'img'}>
-                        <img src={url} alt="film"/>
-                    </div>
-                    <div className={'title'}>{movie.title}</div>
-                </Link>
+                <button onClick={navigator}>
+                    <Link to={{pathname: '/movie-details', state: movie}}>
+                        <div className={'img'}>
+                            <img src={url} alt="film"/>
+                        </div>
+                        <div className={'title'}>{movie.title}</div>
+                    </Link>
+                </button>
             </div>
-            <Route path={'/movie-details'}>
-                <MovieDetails/>
-            </Route>
         </Router>
     );
 }
