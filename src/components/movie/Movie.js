@@ -1,15 +1,28 @@
 import './Movie.css';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+} from "react-router-dom";
+import MovieDetails from "../movie_details/MovieDetails";
 
-export default function Movie({movie: {title, poster_path}}) {
+export default function Movie({movie}) {
 
-    let url = 'https://image.tmdb.org/t/p/w300' + poster_path;
+    let url = 'https://image.tmdb.org/t/p/w300' + movie.poster_path;
 
     return (
-        <div className={'film'}>
-            <div className={'img'}>
-                <img src={url} alt="film"/>
+        <Router>
+            <div className={'film'}>
+                <Link to={'/movie-details'}>
+                    <div className={'img'}>
+                        <img src={url} alt="film"/>
+                    </div>
+                    <div className={'title'}>{movie.title}</div>
+                </Link>
             </div>
-            <div className={'title'}>{title}</div>
-        </div>
+            <Route path={'/movie-details'}>
+                <MovieDetails/>
+            </Route>
+        </Router>
     );
 }

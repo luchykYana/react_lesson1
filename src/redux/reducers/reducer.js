@@ -1,6 +1,6 @@
 const initialState = {
     films: [],
-    // genres:[],
+    genres:[],
     isFetching: true,
     currentPage: 1,
     perPage: 20,
@@ -19,7 +19,7 @@ export const reducer = (state = initialState, action) => {
                 isFetching: action.payload
             }
         case 'ADD_GENRES':
-            return {...state, genres: [...action.payload]};
+            return {...state, genres: action.payload.genres};
         default:
             return state;
     }

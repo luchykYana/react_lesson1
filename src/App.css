@@ -1,7 +1,15 @@
 .main-page{
+    padding-bottom: 10px;
     box-sizing: border-box;
     background-color: #C3073F;
-    height: 2800px;
+    height: auto;
+}
+
+header{
+    background-color: #1A1A1D;
+    height: 200px;
+    margin: 0 100px 20px;
+    color:#C3073F;
 }
 
 .pages {
