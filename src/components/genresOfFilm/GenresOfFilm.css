@@ -1,0 +1,7 @@
+.genresOfFilm{
+    display: flex;
+}
+
+.genreOfFilm{
+    margin: 0 10px;
+}

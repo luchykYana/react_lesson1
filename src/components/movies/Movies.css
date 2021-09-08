@@ -1,10 +1,26 @@
 .films{
-    margin: 0 100px;
-    padding: 20px 40px;
+    margin: 20px 60px;
+    padding: 20px 25px;
     display: flex;
     flex-wrap: wrap;
-    grid-column-gap: 50px;
+    grid-column-gap: 30px;
     justify-content: left;
     border: 5px solid #1A1A1D;
     background-color:#1A1A1D;
+}
+
+.film > button{
+    margin: 0;
+    padding: 0;
+    background-color: #1A1A1D;
+    border: none;
+}
+
+.film > button > a{
+    font-size: 20px;
+    color: white;
+}
+
+.film .title{
+    margin: 10px;
 }

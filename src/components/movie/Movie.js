@@ -4,11 +4,11 @@ import {
     Link,
 } from "react-router-dom";
 import {useHistory} from "react-router";
-
+import {url} from "../../services/movie.service";
 
 export default function Movie({movie}) {
 
-    let url = 'https://image.tmdb.org/t/p/w300' + movie.poster_path;
+    let img = url + 'w300' + movie.poster_path;
     let history = useHistory();
     const navigator = () => {
         history.push(
@@ -22,7 +22,7 @@ export default function Movie({movie}) {
                 <button onClick={navigator}>
                     <Link to={{pathname: '/movie-details', state: movie}}>
                         <div className={'img'}>
-                            <img src={url} alt="film"/>
+                            <img src={img} alt="film"/>
                         </div>
                         <div className={'title'}>{movie.title}</div>
                     </Link>

@@ -20,3 +20,48 @@ export function createPages(pages, currentPage) {
         }
     }
 }
+
+export function colorG(genre){
+    switch (genre){
+        case 'Action':
+            return 'blue';
+        case 'Romance':
+            return 'pink';
+        case 'Fantasy':
+            return 'mediumslateblue';
+        case 'Comedy':
+            return 'yellow';
+        case 'Adventure':
+            return 'aquamarine';
+        case 'Science Fiction':
+            return 'deepskyblue';
+        case 'Mystery':
+            return 'violet';
+        case 'Animation':
+            return 'greenyellow';
+        case 'Crime':
+            return 'crimson';
+        case 'Documentary':
+            return 'slategrey';
+        case 'Drama':
+            return 'tomato';
+        case 'Family':
+            return 'springgreen';
+        case 'History':
+            return 'sandybrown';
+        case 'Horror':
+            return 'cadetblue';
+        case 'Music':
+            return 'magenta';
+        case 'TV Movie':
+            return 'orange';
+        case 'Thriller':
+            return 'green';
+        case 'War':
+            return 'teal';
+        case 'Western':
+            return 'goldenrod';
+        default:
+            return 'white';
+    }
+}

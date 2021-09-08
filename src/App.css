@@ -6,14 +6,41 @@
 }
 
 .first{
+    padding: 20px 0;
     background-color: #C3073F;
 }
 
 header{
+    display: flex;
+    justify-content: space-between;
+    grid-column-gap: 150px;
     background-color: #1A1A1D;
-    height: 200px;
-    margin: 0 100px 20px;
-    color:#C3073F;
+    height: 100px;
+    padding: 0 50px 0 300px;
+    margin: 0 60px 50px;
+    align-items: center;
+}
+
+header  a{
+    font-size: 20px;
+    color: white;
+}
+
+header select{
+    padding: 5px;
+    font-size: 20px;
+    background-color: #1A1A1D;
+    color: white;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+header select option{
+    background-color: #C3073F;
+    color: white;
 }
 
 .pages {
@@ -39,4 +66,41 @@ header{
 .page:hover{
     background-color: white;
     color: #1A1A1D;
+}
+
+a{
+    text-decoration: none;
+}
+
+.circle{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+}
+.name{
+    text-align: center;
+    width: 40px;
+    background-color: #1A1A1D;
+    border: none;
+    color: white;
+}
+
+.instruction{
+    margin: 0 60px;
+}
+
+.switch{
+    background: #C3073F;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: color 300ms, background-color 300ms;
+}
+
+.switch:hover{
+    color: #1A1A1D;
+    background-color: white;
 }

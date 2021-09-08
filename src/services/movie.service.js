@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const url = 'https://image.tmdb.org/t/p/';
+
 let instance = axios.create({
     baseURL: "https://api.themoviedb.org/3/",
     headers: {
@@ -9,7 +11,6 @@ let instance = axios.create({
 
 const discoverMovie = async (currentPage) => await instance('discover/movie?&page=' + currentPage);
 const getFilmsOfGenres = async (genre) => await instance('discover/movie?&with_genres=' + genre);
-// 'list/' + id
 const getGenres = async () => await instance('genre/movie/list');
 
-export {discoverMovie, getGenres, getFilmsOfGenres};
+export {discoverMovie, getGenres, getFilmsOfGenres, url};

@@ -1,3 +1,5 @@
+import {ADD_FILMS, ADD_GENRES, SET_CURRENT_PAGE} from "../actions";
+
 const initialState = {
     films: [],
     genres:[],
@@ -9,16 +11,11 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_FILMS':
+        case ADD_FILMS:
             return {...state, films: action.payload.films, totalCount: action.payload.totalCount, isFetching: false};
-        case 'SET_CURRENT_PAGE':
+        case SET_CURRENT_PAGE:
             return {...state, currentPage: action.payload}
-        case 'SET_IS_FETCHING':
-            return {
-                ...state,
-                isFetching: action.payload
-            }
-        case 'ADD_GENRES':
+        case ADD_GENRES:
             return {...state, genres: action.payload.genres};
         default:
             return state;
